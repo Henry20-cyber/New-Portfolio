@@ -193,18 +193,25 @@
           <i class="fab fa-js-square text-5xl sm:text-6xl text-yellow-400 mb-3 sm:mb-4"></i>
           <p class="font-semibold text-sm sm:text-base">JavaScript</p>
         </div>
-        <div class="skill-card bg-gray-900/80 p-8 rounded-xl text-center shadow-xl opacity-0 translate-y-10" style="transition-delay: 400ms;">
-          <img src="/Images/tailwind-css.svg" alt="Tailwind" class="w-16 mx-auto mb-4">
-          <p class="font-semibold">Tailwind CSS</p>
+
+        <div class="skill-card bg-gray-900/80 p-5 sm:p-6 md:p-8 rounded-xl text-center shadow-xl opacity-0 translate-y-10 flex flex-col items-center justify-center min-h-[100px] xs:min-h-[110px] sm:min-h-[130px]" style="transition-delay: 250ms;">
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-original.svg" alt="Tailwind" class="w-12 sm:w-14 md:w-16 mx-auto mb-3 sm:mb-4">
+          <p class="font-semibold text-sm sm:text-base">Tailwind CSS</p>
         </div>
 
         <div class="skill-card bg-gray-900/80 p-5 sm:p-6 md:p-8 rounded-xl text-center shadow-xl opacity-0 translate-y-10 flex flex-col items-center justify-center min-h-[100px] xs:min-h-[110px] sm:min-h-[130px]" style="transition-delay: 300ms;">
           <i class="fab fa-bootstrap text-5xl sm:text-6xl text-purple-600 mb-3 sm:mb-4"></i>
           <p class="font-semibold text-sm sm:text-base">Bootstrap</p>
         </div>
-        <div class="skill-card bg-gray-900/80 p-8 rounded-xl text-center shadow-xl opacity-0 translate-y-10" style="transition-delay: 500ms;">
-          <img src="/Images/react.svg" alt="React" class="w-16 mx-auto mb-4">
-          <p class="font-semibold">React</p>
+
+        <div class="skill-card bg-gray-900/80 p-5 sm:p-6 md:p-8 rounded-xl text-center shadow-xl opacity-0 translate-y-10 flex flex-col items-center justify-center min-h-[100px] xs:min-h-[110px] sm:min-h-[130px]" style="transition-delay: 350ms;">
+          <i class="fa-brands fa-react text-5xl sm:text-6xl text-blue mb-3 sm:mb-4"></i>
+          <p class="font-semibold text-sm sm:text-base">React</p>
+        </div>
+
+        <div class="skill-card bg-gray-900/80 p-5 sm:p-6 md:p-8 rounded-xl text-center shadow-xl opacity-0 translate-y-10 flex flex-col items-center justify-center min-h-[100px] xs:min-h-[110px] sm:min-h-[130px]" style="transition-delay: 350ms;">
+          <i class="fa-brands fa-python text-5xl sm:text-6xl text-blue mb-3 sm:mb-4"></i>
+          <p class="font-semibold text-sm sm:text-base">Python</p>
         </div>
 
         <div class="skill-card bg-gray-900/80 p-5 sm:p-6 md:p-8 rounded-xl text-center shadow-xl opacity-0 translate-y-10 flex flex-col items-center justify-center min-h-[100px] xs:min-h-[110px] sm:min-h-[130px]" style="transition-delay: 400ms;">
@@ -332,8 +339,8 @@
     menuBtn.addEventListener('click', () => {
       const isOpen = mobileMenu.classList.contains('translate-x-0');
       mobileMenu.classList.toggle('translate-x-0', !isOpen);
-      mobileMenu.classList.toggle('hidden', isOpen);
       mobileMenu.classList.toggle('translate-x-full', isOpen);
+      mobileMenu.classList.toggle('hidden', isOpen);
       hamburgerIcon.classList.toggle('fa-bars', isOpen);
       hamburgerIcon.classList.toggle('fa-times', !isOpen);
     });
@@ -342,6 +349,7 @@
       link.addEventListener('click', () => {
         mobileMenu.classList.remove('translate-x-0');
         mobileMenu.classList.add('translate-x-full');
+        mobileMenu.classList.add('bg-gray-900/95', 'p-6', 'absolute', 'top-16', 'left-0', 'w-full', 'h-screen', 'flex', 'flex-col', 'justify-center', 'items-center', 'space-y-8', 'z-40', 'transition-transform', 'duration-400', 'ease-in-out');
 
         hamburgerIcon.classList.remove('fa-times');
         hamburgerIcon.classList.add('fa-bars');
