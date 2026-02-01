@@ -10,6 +10,19 @@
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <!-- Font Awesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          screens: {
+            'xs': '480px',
+          }
+        }
+      }
+    }
+  </script>
+
   <style>
     body {
       font-family: 'Poppins', sans-serif;
@@ -64,40 +77,58 @@
       from, to { border-color: transparent }
       50% { border-color: #60a5fa; }
     }
-    /* Mobile menu overlay */
     #mobileMenu {
       transition: transform 0.4s ease-in-out;
     }
+
+    /* Mobile improvements */
+    @media (max-width: 640px) {
+      h2 {
+        font-size: 2.5rem !important;
+      }
+      h3 {
+        font-size: 2rem !important;
+      }
+      section {
+        padding-top: 4rem !important;
+        padding-bottom: 4rem !important;
+      }
+      .skill-card i {
+        font-size: 2.8rem;
+      }
+      .skill-card img {
+        width: 3.5rem;
+      }
+    }
   </style>
 </head>
-<body class="bg-gray-950 text-gray-100">
+<body class="bg-gray-950 text-gray-100 min-h-screen">
 
   <!-- NAVBAR -->
-  <nav class="fixed top-0 w-full bg-gray-900/95 backdrop-blur-md z-50 shadow-lg transition-all duration-300" id="navbar">
-    <div class="max-w-7xl mx-auto px-6 py-5 flex justify-between items-center">
-      <div>
-      <span class="text-2xl font-bold text-blue-400 cursor-pointer" id="logo">Henry</span>
-      <span class="text-2xl font-bold text-white cursor-pointer" id="logo">Codes</span>
+  <nav class="fixed top-0 w-full bg-gray-900/95 z-50 shadow-lg transition-all duration-300" id="navbar">
+    <div class="max-w-7xl mx-auto px-5 sm:px-6 py-4 flex justify-between items-center">
+      <div class="flex items-center gap-1">
+        <span class="text-2xl font-bold text-blue-400 cursor-pointer" id="logo">Henry</span>
+        <span class="text-2xl font-bold text-white cursor-pointer">Codes</span>
       </div>
 
-      
       <!-- Desktop Menu -->
-      <div class="space-x-8 hidden md:flex text-lg" id="desktopMenu">
+      <div class="space-x-6 sm:space-x-8 hidden md:flex text-base sm:text-lg" id="desktopMenu">
         <a href="#about" class="nav-link hover:text-blue-400">About</a>
         <a href="#skills" class="nav-link hover:text-blue-400">Skills</a>
         <a href="#projects" class="nav-link hover:text-blue-400">Projects</a>
         <a href="#contact" class="nav-link hover:text-blue-400">Contact</a>
       </div>
 
-      <!-- Mobile Hamburger Button -->
+      <!-- Mobile Hamburger -->
       <button class="md:hidden text-3xl text-blue-400 focus:outline-none z-50" id="menuBtn" aria-label="Toggle menu">
         <i class="fas fa-bars" id="hamburgerIcon"></i>
       </button>
     </div>
 
     <!-- Mobile Menu Overlay -->
-    <div class="fixed inset-0 bg-gray-900/98 backdrop-blur-lg transform translate-x-full md:hidden flex items-center justify-center" id="mobileMenu">
-      <div class="text-center space-y-10 text-2xl">
+    <div class="md:hidden hidden" id="mobileMenu">
+      <div class="text-center space-y-12 text-2xl">
         <a href="#about" class="block nav-link-mobile hover:text-blue-400 transition">About</a>
         <a href="#skills" class="block nav-link-mobile hover:text-blue-400 transition">Skills</a>
         <a href="#projects" class="block nav-link-mobile hover:text-blue-400 transition">Projects</a>
@@ -107,23 +138,22 @@
   </nav>
 
   <!-- HERO SECTION -->
-  <section class="hero-bg min-h-screen flex items-center justify-center px-6 text-center">
+  <section class="hero-bg min-h-screen flex items-center justify-center px-5 sm:px-6 text-center pt-16">
     <div class="max-w-4xl opacity-0 translate-y-10 transition-all duration-1000" id="heroContent">
-  
-      <h2 class="text-5xl md:text-7xl font-bold mb-6 bg-gradient-to-r from-blue-400 to-cyan-300 bg-clip-text text-transparent">
+      <h2 class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-5 sm:mb-6 bg-gradient-to-r from-blue-400 to-cyan-300 bg-clip-text text-transparent">
         Hi, I'm Onuoha Henry
       </h2>
-      <p class="text-2xl md:text-3xl font-medium mb-4 text-gray-300">
+      <p class="text-xl sm:text-2xl md:text-3xl font-medium mb-4 text-gray-300">
         I build <span class="text-blue-400 font-bold typewriter inline-block">beautiful web experiences</span>
       </p>
-      <p class="text-lg md:text-xl text-gray-400 max-w-2xl mx-auto mb-10">
+      <p class="text-base sm:text-lg md:text-xl text-gray-400 max-w-xl mx-auto mb-8 sm:mb-10">
         Crafting responsive, clean, and user-centric interfaces with modern technologies.
       </p>
-      <div class="flex justify-center gap-6">
-        <a href="#projects" class="px-8 py-4 bg-blue-600 text-lg font-semibold rounded-lg hover:bg-blue-700 transition shadow-lg transform hover:scale-105">
+      <div class="flex flex-col sm:flex-row justify-center gap-4 sm:gap-6">
+        <a href="#projects" class="px-7 sm:px-8 py-3 sm:py-4 bg-blue-600 text-base sm:text-lg font-semibold rounded-lg hover:bg-blue-700 transition shadow-lg transform hover:scale-105">
           View My Work
         </a>
-        <a href="#contact" class="px-8 py-4 border-2 border-blue-400 text-lg font-semibold rounded-lg hover:bg-blue-600/20 transition transform hover:scale-105">
+        <a href="#contact" class="px-7 sm:px-8 py-3 sm:py-4 border-2 border-blue-400 text-base sm:text-lg font-semibold rounded-lg hover:bg-blue-600/20 transition transform hover:scale-105">
           Get In Touch
         </a>
       </div>
@@ -131,84 +161,95 @@
   </section>
 
   <!-- ABOUT SECTION -->
-  <section id="about" class="py-32 px-6 section-bg-alt">
+  <section id="about" class="py-20 sm:py-24 md:py-32 px-5 sm:px-6 section-bg-alt">
     <div class="max-w-5xl mx-auto text-center opacity-0 translate-y-10 transition-all duration-1000" id="aboutSection">
-      <h3 class="text-4xl md:text-5xl font-bold mb-10 text-blue-400">About Me</h3>
-      <p class="text-xl leading-relaxed text-gray-300 max-w-3xl mx-auto">
+      <h3 class="text-3xl sm:text-4xl md:text-5xl font-bold mb-8 md:mb-10 text-blue-400">About Me</h3>
+      <p class="text-lg sm:text-xl leading-relaxed text-gray-300 max-w-3xl mx-auto">
         I'm a dedicated <strong class="text-blue-400">Frontend Developer with 2+ years of hands-on experience</strong> building pixel-perfect, responsive, and accessible web applications. 
         I specialize in turning design concepts into seamless, high-performance user interfaces.
       </p>
     </div>
   </section>
 
-  <!-- SKILLS SECTION -->
-  <section id="skills" class="py-32 px-6">
+  <!-- SKILLS SECTION - IMPROVED FOR MOBILE -->
+  <section id="skills" class="py-20 sm:py-24 md:py-32 px-5 sm:px-6">
     <div class="max-w-6xl mx-auto">
-      <h3 class="text-4xl md:text-5xl font-bold text-center mb-16 text-blue-400 opacity-0 translate-y-10 transition-all duration-1000" id="skillsTitle">Skills & Technologies</h3>
-      <div class="grid grid-cols-3 md:grid-cols-6 gap-8">
-        <div class="skill-card bg-gray-900/80 p-8 rounded-xl text-center shadow-xl opacity-0 translate-y-10" style="transition-delay: 100ms;">
-          <i class="fab fa-html5 text-6xl text-orange-500 mb-4"></i>
-          <p class="font-semibold">HTML5</p>
+      <h3 class="text-3xl sm:text-4xl md:text-5xl font-bold text-center mb-10 sm:mb-14 md:mb-16 text-blue-400 opacity-0 translate-y-10 transition-all duration-1000" id="skillsTitle">
+        Skills & Technologies
+      </h3>
+      <div class="grid grid-cols-2 xs:grid-cols-3 sm:grid-cols-4 md:grid-cols-5 lg:grid-cols-6 gap-5 sm:gap-6 md:gap-8">
+        
+        <div class="skill-card bg-gray-900/80 p-5 sm:p-6 md:p-8 rounded-xl text-center shadow-xl opacity-0 translate-y-10 flex flex-col items-center justify-center min-h-[100px] xs:min-h-[110px] sm:min-h-[130px]" style="transition-delay: 100ms;">
+          <i class="fab fa-html5 text-5xl sm:text-6xl text-orange-500 mb-3 sm:mb-4"></i>
+          <p class="font-semibold text-sm sm:text-base">HTML5</p>
         </div>
-        <div class="skill-card bg-gray-900/80 p-8 rounded-xl text-center shadow-xl opacity-0 translate-y-10" style="transition-delay: 200ms;">
-          <i class="fab fa-css3-alt text-6xl text-blue-500 mb-4"></i>
-          <p class="font-semibold">CSS3</p>
+
+        <div class="skill-card bg-gray-900/80 p-5 sm:p-6 md:p-8 rounded-xl text-center shadow-xl opacity-0 translate-y-10 flex flex-col items-center justify-center min-h-[100px] xs:min-h-[110px] sm:min-h-[130px]" style="transition-delay: 150ms;">
+          <i class="fab fa-css3-alt text-5xl sm:text-6xl text-blue-500 mb-3 sm:mb-4"></i>
+          <p class="font-semibold text-sm sm:text-base">CSS3</p>
         </div>
-        <div class="skill-card bg-gray-900/80 p-8 rounded-xl text-center shadow-xl opacity-0 translate-y-10" style="transition-delay: 300ms;">
-          <i class="fab fa-js-square text-6xl text-yellow-400 mb-4"></i>
-          <p class="font-semibold">JavaScript</p>
+
+        <div class="skill-card bg-gray-900/80 p-5 sm:p-6 md:p-8 rounded-xl text-center shadow-xl opacity-0 translate-y-10 flex flex-col items-center justify-center min-h-[100px] xs:min-h-[110px] sm:min-h-[130px]" style="transition-delay: 200ms;">
+          <i class="fab fa-js-square text-5xl sm:text-6xl text-yellow-400 mb-3 sm:mb-4"></i>
+          <p class="font-semibold text-sm sm:text-base">JavaScript</p>
         </div>
-        <div class="skill-card bg-gray-900/80 p-8 rounded-xl text-center shadow-xl opacity-0 translate-y-10" style="transition-delay: 400ms;">
-          <img src="/Images/tailwind-css.svg" alt="Tailwind" class="w-16 mx-auto mb-4">
-          <p class="font-semibold">Tailwind CSS</p>
+
+        <div class="skill-card bg-gray-900/80 p-5 sm:p-6 md:p-8 rounded-xl text-center shadow-xl opacity-0 translate-y-10 flex flex-col items-center justify-center min-h-[100px] xs:min-h-[110px] sm:min-h-[130px]" style="transition-delay: 250ms;">
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-original.svg" alt="Tailwind" class="w-12 sm:w-14 md:w-16 mx-auto mb-3 sm:mb-4">
+          <p class="font-semibold text-sm sm:text-base">Tailwind CSS</p>
         </div>
-        <div class="skill-card bg-gray-900/80 p-8 rounded-xl text-center shadow-xl opacity-0 translate-y-10" style="transition-delay: 500ms;">
-          <i class="fab fa-bootstrap text-6xl text-purple-600 mb-4"></i>
-          <p class="font-semibold">Bootstrap</p>
+
+        <div class="skill-card bg-gray-900/80 p-5 sm:p-6 md:p-8 rounded-xl text-center shadow-xl opacity-0 translate-y-10 flex flex-col items-center justify-center min-h-[100px] xs:min-h-[110px] sm:min-h-[130px]" style="transition-delay: 300ms;">
+          <i class="fab fa-bootstrap text-5xl sm:text-6xl text-purple-600 mb-3 sm:mb-4"></i>
+          <p class="font-semibold text-sm sm:text-base">Bootstrap</p>
         </div>
-        <div class="skill-card bg-gray-900/80 p-8 rounded-xl text-center shadow-xl opacity-0 translate-y-10" style="transition-delay: 500ms;">
-          <img src="/Images/react.svg" alt="React" class="w-16 mx-auto mb-4">
-          <p class="font-semibold">React</p>
+
+        <div class="skill-card bg-gray-900/80 p-5 sm:p-6 md:p-8 rounded-xl text-center shadow-xl opacity-0 translate-y-10 flex flex-col items-center justify-center min-h-[100px] xs:min-h-[110px] sm:min-h-[130px]" style="transition-delay: 350ms;">
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" alt="React" class="w-12 sm:w-14 md:w-16 mx-auto mb-3 sm:mb-4">
+          <p class="font-semibold text-sm sm:text-base">React</p>
         </div>
-        <div class="skill-card bg-gray-900/80 p-8 rounded-xl text-center shadow-xl opacity-0 translate-y-10" style="transition-delay: 600ms;">
-          <i class="fab fa-git-alt text-6xl text-orange-600 mb-4"></i>
-          <p class="font-semibold">Git & GitHub</p>
+
+        <div class="skill-card bg-gray-900/80 p-5 sm:p-6 md:p-8 rounded-xl text-center shadow-xl opacity-0 translate-y-10 flex flex-col items-center justify-center min-h-[100px] xs:min-h-[110px] sm:min-h-[130px]" style="transition-delay: 400ms;">
+          <i class="fab fa-git-alt text-5xl sm:text-6xl text-orange-600 mb-3 sm:mb-4"></i>
+          <p class="font-semibold text-sm sm:text-base">Git & GitHub</p>
         </div>
       </div>
     </div>
   </section>
 
   <!-- PROJECTS SECTION -->
-  <section id="projects" class="py-32 px-6 section-bg-alt">
+  <section id="projects" class="py-20 sm:py-24 md:py-32 px-5 sm:px-6 section-bg-alt">
     <div class="max-w-7xl mx-auto">
-      <h3 class="text-4xl md:text-5xl font-bold text-center mb-16 text-blue-400 opacity-0 translate-y-10 transition-all duration-1000" id="projectsTitle">Featured Projects</h3>
-      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-12">
+      <h3 class="text-3xl sm:text-4xl md:text-5xl font-bold text-center mb-10 sm:mb-14 md:mb-16 text-blue-400 opacity-0 translate-y-10 transition-all duration-1000" id="projectsTitle">
+        Featured Projects
+      </h3>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 sm:gap-10 lg:gap-12">
         <div class="project-card bg-gray-900 rounded-2xl overflow-hidden shadow-2xl opacity-0 translate-y-10" style="transition-delay: 100ms;">
-          <img src="https://themewagon.com/wp-content/uploads/2021/12/famms-1.png" alt="E-Commerce" class="w-full h-64 object-cover">
-          <div class="p-8">
-            <h4 class="text-2xl font-bold mb-4 text-blue-400">E-Commerce Platform</h4>
-            <p class="text-gray-400 mb-6">Fully responsive shopping interface with cart and smooth interactions.</p>
-            <div class="flex flex-wrap gap-3 mb-6">
-              <span class="px-4 py-2 bg-blue-900/50 rounded-full text-sm">HTML</span>
-              <span class="px-4 py-2 bg-blue-900/50 rounded-full text-sm">Tailwind</span>
-              <span class="px-4 py-2 bg-blue-900/50 rounded-full text-sm">JS</span>
+          <img src="https://themewagon.com/wp-content/uploads/2021/12/famms-1.png" alt="E-Commerce" class="w-full h-48 sm:h-56 md:h-64 object-cover">
+          <div class="p-6 sm:p-8">
+            <h4 class="text-xl sm:text-2xl font-bold mb-3 sm:mb-4 text-blue-400">E-Commerce Platform</h4>
+            <p class="text-gray-400 mb-4 sm:mb-6 text-sm sm:text-base">Fully responsive shopping interface with cart and smooth interactions.</p>
+            <div class="flex flex-wrap gap-2 sm:gap-3 mb-4 sm:mb-6">
+              <span class="px-3 sm:px-4 py-1 sm:py-2 bg-blue-900/50 rounded-full text-xs sm:text-sm">HTML</span>
+              <span class="px-3 sm:px-4 py-1 sm:py-2 bg-blue-900/50 rounded-full text-xs sm:text-sm">Tailwind</span>
+              <span class="px-3 sm:px-4 py-1 sm:py-2 bg-blue-900/50 rounded-full text-xs sm:text-sm">JS</span>
             </div>
-            <a href="#" class="text-blue-400 font-semibold hover:underline flex items-center gap-2">
+            <a href="#" class="text-blue-400 font-semibold hover:underline flex items-center gap-2 text-sm sm:text-base">
               Live Demo <i class="fas fa-external-link-alt"></i>
             </a>
           </div>
         </div>
 
-        <div class="project-card bg-gray-900 rounded-2xl overflow-hidden shadow-2xl opacity-0 translate-y-10" style="transition-delay: 300ms;">
-          <img src="https://flatlogic.com/blog/wp-content/uploads/2019/08/Responsive-dark-admin.png" alt="Dashboard" class="w-full h-64 object-cover">
-          <div class="p-8">
-            <h4 class="text-2xl font-bold mb-4 text-blue-400">Admin Dashboard</h4>
-            <p class="text-gray-400 mb-6">Modern dark-themed dashboard with interactive elements.</p>
-            <div class="flex flex-wrap gap-3 mb-6">
-              <span class="px-4 py-2 bg-blue-900/50 rounded-full text-sm">Tailwind</span>
-              <span class="px-4 py-2 bg-blue-900/50 rounded-full text-sm">JavaScript</span>
+        <div class="project-card bg-gray-900 rounded-2xl overflow-hidden shadow-2xl opacity-0 translate-y-10" style="transition-delay: 200ms;">
+          <img src="https://flatlogic.com/blog/wp-content/uploads/2019/08/Responsive-dark-admin.png" alt="Dashboard" class="w-full h-48 sm:h-56 md:h-64 object-cover">
+          <div class="p-6 sm:p-8">
+            <h4 class="text-xl sm:text-2xl font-bold mb-3 sm:mb-4 text-blue-400">Admin Dashboard</h4>
+            <p class="text-gray-400 mb-4 sm:mb-6 text-sm sm:text-base">Modern dark-themed dashboard with interactive elements.</p>
+            <div class="flex flex-wrap gap-2 sm:gap-3 mb-4 sm:mb-6">
+              <span class="px-3 sm:px-4 py-1 sm:py-2 bg-blue-900/50 rounded-full text-xs sm:text-sm">Tailwind</span>
+              <span class="px-3 sm:px-4 py-1 sm:py-2 bg-blue-900/50 rounded-full text-xs sm:text-sm">JavaScript</span>
             </div>
-            <a href="#" class="text-blue-400 font-semibold hover:underline flex items-center gap-2">
+            <a href="#" class="text-blue-400 font-semibold hover:underline flex items-center gap-2 text-sm sm:text-base">
               Live Demo <i class="fas fa-external-link-alt"></i>
             </a>
           </div>
@@ -218,60 +259,58 @@
   </section>
 
   <!-- CONTACT SECTION -->
-  <section id="contact" class="py-32 px-6">
+  <section id="contact" class="py-20 sm:py-24 md:py-32 px-5 sm:px-6">
     <div class="max-w-4xl mx-auto text-center opacity-0 translate-y-10 transition-all duration-1000" id="contactSection">
-      <h3 class="text-4xl md:text-5xl font-bold mb-10 text-blue-400">Let's Connect</h3>
-      <p class="text-xl text-gray-300 mb-12">
+      <h3 class="text-3xl sm:text-4xl md:text-5xl font-bold mb-8 md:mb-10 text-blue-400">Let's Connect</h3>
+      <p class="text-lg sm:text-xl text-gray-300 mb-10 sm:mb-12">
         Open to frontend roles, internships, freelance, or collaborations.
       </p>
-      <div class="flex justify-center gap-8 mb-12">
-        <a href="mailto:your.email@example.com" class="text-4xl text-blue-400 hover:text-blue-300 hover:scale-125 transition transform">
+      <div class="flex justify-center gap-6 sm:gap-8 mb-10 sm:mb-12">
+        <a href="mailto:your.email@example.com" class="text-3xl sm:text-4xl text-blue-400 hover:text-blue-300 hover:scale-125 transition transform">
           <i class="fas fa-envelope"></i>
         </a>
-        <a href="https://github.com/yourusername" class="text-4xl text-blue-400 hover:text-blue-300 hover:scale-125 transition transform">
+        <a href="https://github.com/yourusername" class="text-3xl sm:text-4xl text-blue-400 hover:text-blue-300 hover:scale-125 transition transform">
           <i class="fab fa-github"></i>
         </a>
-        <a href="https://linkedin.com/in/yourprofile" class="text-4xl text-blue-400 hover:text-blue-300 hover:scale-125 transition transform">
+        <a href="https://linkedin.com/in/yourprofile" class="text-3xl sm:text-4xl text-blue-400 hover:text-blue-300 hover:scale-125 transition transform">
           <i class="fab fa-linkedin"></i>
         </a>
       </div>
-      <div class="flex justify-center gap-6">
-        <a href="mailto:your.email@example.com" class="px-10 py-4 bg-blue-600 text-lg font-semibold rounded-lg hover:bg-blue-700 transition shadow-lg transform hover:scale-105">
+      <div class="flex flex-col sm:flex-row justify-center gap-4 sm:gap-6">
+        <a href="mailto:your.email@example.com" class="px-8 sm:px-10 py-3 sm:py-4 bg-blue-600 text-base sm:text-lg font-semibold rounded-lg hover:bg-blue-700 transition shadow-lg transform hover:scale-105">
           Send Email
         </a>
-        <a href="resume.pdf" class="px-10 py-4 border-2 border-blue-400 text-lg font-semibold rounded-lg hover:bg-blue-600/20 transition transform hover:scale-105">
+        <a href="resume.pdf" class="px-8 sm:px-10 py-3 sm:py-4 border-2 border-blue-400 text-base sm:text-lg font-semibold rounded-lg hover:bg-blue-600/20 transition transform hover:scale-105">
           Download Resume
         </a>
       </div>
     </div>
   </section>
 
-  <footer class="py-8 text-center text-gray-500 border-t border-gray-800">
-    <p>&copy; 2025 Onuoha Henry. Built with passion.</p>
+  <footer class="py-6 sm:py-8 text-center text-gray-500 border-t border-gray-800">
+    <p>© 2025 Onuoha Henry. Built with passion.</p>
   </footer>
 
   <script>
     // Navbar scroll effect
     window.addEventListener('scroll', () => {
       const navbar = document.getElementById('navbar');
-      if (window.scrollY > 100) {
+      if (window.scrollY > 80) {
         navbar.classList.add('bg-gray-900/98', 'shadow-xl');
       } else {
         navbar.classList.remove('bg-gray-900/98', 'shadow-xl');
       }
     });
 
-    // Active nav link highlight (works for both desktop and mobile)
+    // Active nav link
     const navLinks = document.querySelectorAll('.nav-link, .nav-link-mobile');
     const sections = document.querySelectorAll('section[id]');
 
     window.addEventListener('scroll', () => {
       let current = '';
       sections.forEach(section => {
-        const sectionTop = section.offsetTop - 100;
-        if (scrollY >= sectionTop) {
-          current = section.getAttribute('id');
-        }
+        const sectionTop = section.offsetTop - 120;
+        if (scrollY >= sectionTop) current = section.getAttribute('id');
       });
 
       navLinks.forEach(link => {
@@ -282,7 +321,7 @@
       });
     });
 
-    // Logo click scrolls to top smoothly
+    // Logo scroll to top
     document.getElementById('logo').addEventListener('click', () => {
       window.scrollTo({ top: 0, behavior: 'smooth' });
     });
@@ -294,38 +333,24 @@
 
     menuBtn.addEventListener('click', () => {
       const isOpen = mobileMenu.classList.contains('translate-x-0');
-
-      if (isOpen) {
-        // Close menu
-        mobileMenu.classList.remove('translate-x-0');
-        mobileMenu.classList.add('translate-x-full');
-        hamburgerIcon.classList.remove('fa-times');
-        hamburgerIcon.classList.add('fa-bars');
-      } else {
-        // Open menu
-        mobileMenu.classList.remove('translate-x-full');
-        mobileMenu.classList.add('translate-x-0');
-        hamburgerIcon.classList.remove('fa-bars');
-        hamburgerIcon.classList.add('fa-times');
-      }
+      mobileMenu.classList.toggle('translate-x-0', !isOpen);
+      mobileMenu.classList.toggle('hidden', isOpen);
+      mobileMenu.classList.toggle('translate-x-full', isOpen);
+      hamburgerIcon.classList.toggle('fa-bars', isOpen);
+      hamburgerIcon.classList.toggle('fa-times', !isOpen);
     });
 
-    // Close menu when clicking a link
     document.querySelectorAll('.nav-link-mobile').forEach(link => {
       link.addEventListener('click', () => {
         mobileMenu.classList.remove('translate-x-0');
         mobileMenu.classList.add('translate-x-full');
+
         hamburgerIcon.classList.remove('fa-times');
         hamburgerIcon.classList.add('fa-bars');
       });
     });
 
-    // Scroll reveal animations
-    const observerOptions = {
-      threshold: 0.1,
-      rootMargin: '0px 0px -50px 0px'
-    };
-
+    // Scroll reveal
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
@@ -333,18 +358,18 @@
           entry.target.classList.remove('opacity-0', 'translate-y-10');
         }
       });
-    }, observerOptions);
+    }, { threshold: 0.1, rootMargin: '0px 0px -60px 0px' });
 
     observer.observe(document.getElementById('heroContent'));
     document.querySelectorAll('#aboutSection, #skillsTitle, #projectsTitle, #contactSection, .skill-card, .project-card').forEach(el => {
       observer.observe(el);
     });
 
-    // Hover enhancements
+    // Skill & Project hover effects
     document.querySelectorAll('.skill-card').forEach(card => {
       card.addEventListener('mouseenter', () => {
-        card.style.transform = 'translateY(-15px) scale(1.05)';
-        card.style.boxShadow = '0 25px 40px -12px rgba(59, 130, 246, 0.6)';
+        card.style.transform = 'translateY(-12px) scale(1.04)';
+        card.style.boxShadow = '0 20px 35px -10px rgba(59, 130, 246, 0.5)';
       });
       card.addEventListener('mouseleave', () => {
         card.style.transform = 'translateY(0) scale(1)';
@@ -354,7 +379,7 @@
 
     document.querySelectorAll('.project-card').forEach(card => {
       card.addEventListener('mouseenter', () => {
-        card.querySelector('img').style.transform = 'scale(1.15)';
+        card.querySelector('img').style.transform = 'scale(1.12)';
       });
       card.addEventListener('mouseleave', () => {
         card.querySelector('img').style.transform = 'scale(1)';
