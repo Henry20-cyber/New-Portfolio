@@ -238,28 +238,52 @@
     <!-- ABOUT SECTION -->
     <section
       id="about"
-      class="py-20 sm:py-24 md:py-32 px-5 sm:px-6 section-bg-alt"
+      class="py-20 sm:py-24 md:py-32 px-5 sm:px-6 section-bg-alt bg-[url('Images/ground.jpg')] bg-cover bg-center"
     >
       <div
-        class="max-w-5xl mx-auto text-center opacity-0 translate-y-10 transition-all duration-1000"
-        id="aboutSection"
+      class="max-w-6xl mx-auto opacity-0 translate-y-10 transition-all duration-1000"
+      id="aboutSection"
       >
-        <h3
-          class="text-3xl sm:text-4xl md:text-5xl font-bold mb-8 md:mb-10 text-blue-400"
-        >
-          About Me
-        </h3>
-        <p
-          class="text-lg sm:text-xl leading-relaxed text-gray-300 max-w-3xl mx-auto"
-        >
+      <h3
+        class="text-3xl sm:text-4xl md:text-5xl font-bold mb-12 md:mb-16 text-blue-400 text-center"
+      >
+        About Me
+      </h3>
+      
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 sm:gap-10 md:gap-12 items-center">
+        <!-- Image -->
+        <div class="flex justify-center">
+        <img 
+          src="Images/photo3.jpg" 
+          alt="About Me" 
+          class="w-64 sm:w-72 md:w-5xl lg:w-80 rounded-2xl shadow-2xl hover:shadow-blue-500/30 transition-shadow duration-300"
+        />
+        </div>
+        
+        <!-- Content -->
+        <div class="text-center md:text-left space-y-6">
+        <p class="text-lg sm:text-xl leading-relaxed text-gray-300">
           I'm a dedicated
-          <strong class="text-blue-400"
-            >Frontend Developer with 2+ years of hands-on experience</strong
-          >
+          <strong class="text-blue-400">Frontend Developer with 2+ years of hands-on experience</strong>
           building pixel-perfect, responsive, and accessible web applications. I
           specialize in turning design concepts into seamless, high-performance
           user interfaces.
         </p>
+        
+        <p class="text-base sm:text-lg leading-relaxed text-gray-400">
+          Passionate about clean code, modern frameworks, and creating delightful user experiences. When I'm not coding, I'm exploring new technologies and contributing to open-source projects.
+        </p>
+        
+        <div class="pt-4">
+          <a
+          href="#contact"
+          class="inline-block px-6 sm:px-8 py-2 sm:py-3 bg-blue-600 text-base sm:text-lg font-semibold rounded-lg hover:bg-blue-700 transition transform hover:scale-105"
+          >
+          Let's Work Together
+          </a>
+        </div>
+        </div>
+      </div>
       </div>
     </section>
 
